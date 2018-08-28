@@ -95,7 +95,8 @@ task generateSources (type: Jar) {
 }
 
 clean {
-    delete 'build', 'jni/libs', 'jni/obj'
+//    delete 'build', 'jni/libs', 'jni/obj'
+    delete 'build', 'jni/obj'
 }
 
 dependencies {

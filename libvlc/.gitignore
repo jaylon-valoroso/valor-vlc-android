@@ -1,6 +1,6 @@
 bin/
 gen/
-libs/
+#libs/
 obj/
 jni/libvlcjni-modules.c
 jni/libvlcjni-symbols.c
