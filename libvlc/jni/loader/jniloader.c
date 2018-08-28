@@ -62,6 +62,7 @@ int JNI_OnLoad(JavaVM* vm, void* reserved)
     }
 
     /* MediaLibraryJNI_OnLoad is not mandatory */
+#if 0
     load = dlsym(handle, "MediaLibraryJNI_OnLoad");
     if (load && load(vm, env) != 0)
     {
@@ -69,7 +70,7 @@ int JNI_OnLoad(JavaVM* vm, void* reserved)
         return -1;
     }
     has_ml = !!load;
-
+#endif
     return VLC_JNI_VERSION;
 }
 
@@ -81,6 +82,7 @@ void JNI_OnUnload(JavaVM *vm, void *reserved)
         return;
     void (*unload)(JavaVM *, JNIEnv*);
 
+#if 0
     if (has_ml)
     {
         unload = dlsym(handle, "MediaLibraryJNI_OnUnload");
@@ -89,6 +91,7 @@ void JNI_OnUnload(JavaVM *vm, void *reserved)
         else
             LOGE("could not find MediaLibraryJNI_OnUnload");
     }
+#endif
     unload = dlsym(handle, "VLCJNI_OnUnload");
     if (unload)
         unload(vm, env);

@@ -22,6 +22,7 @@
 
 package org.videolan.libvlc.media;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.MediaFormat;
@@ -232,6 +233,7 @@ public class MediaPlayer
     public void setAuxEffectSendLevel(float level) {
     }
 
+    @SuppressLint("ParcelCreator")
     static public class TrackInfo implements Parcelable {
 
         public static final int MEDIA_TRACK_TYPE_UNKNOWN = 0;
