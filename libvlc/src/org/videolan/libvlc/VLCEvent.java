@@ -61,4 +61,20 @@ public abstract class VLCEvent {
     public interface Listener<T extends VLCEvent> {
         void onEvent(T event);
     }
+
+    public int getType() {
+        return type;
+    }
+
+    public long getArg1() {
+        return arg1;
+    }
+
+    public long getArg2() {
+        return arg2;
+    }
+
+    public float getArgf1() {
+        return argf1;
+    }
 }
