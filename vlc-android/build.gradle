@@ -79,26 +79,26 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            /*
-            To set this properties, create file gradle.properties with these 3 props.
-            e.g.
-            keyStoreFile=/home/<username>/.android/debug.keystore
-            storealias=androiddebugkey
-            storepwd=android
-             */
-            storeFile file(keyStoreFile)
-            keyAlias storealias
-            if (System.getenv('PASSWORD_KEYSTORE') != null && !System.getenv('PASSWORD_KEYSTORE').isEmpty()){
-                storePassword = System.getenv('PASSWORD_KEYSTORE')
-                keyPassword = System.getenv('PASSWORD_KEYSTORE')
-            } else {
-                storePassword storepwd
-                keyPassword storepwd
-            }
-        }
-    }
+//    signingConfigs {
+//        release {
+//            /*
+//            To set this properties, create file gradle.properties with these 3 props.
+//            e.g.
+//            keyStoreFile=/home/<username>/.android/debug.keystore
+//            storealias=androiddebugkey
+//            storepwd=android
+//             */
+//            storeFile file(keyStoreFile)
+//            keyAlias storealias
+//            if (System.getenv('PASSWORD_KEYSTORE') != null && !System.getenv('PASSWORD_KEYSTORE').isEmpty()){
+//                storePassword = System.getenv('PASSWORD_KEYSTORE')
+//                keyPassword = System.getenv('PASSWORD_KEYSTORE')
+//            } else {
+//                storePassword storepwd
+//                keyPassword storepwd
+//            }
+//        }
+//    }
 
     buildTypes {
         release {
@@ -108,11 +108,11 @@ android {
             proguardFile 'proguard.cfg'
             kotlinOptions.freeCompilerArgs = [ 'Xno-param-assertions']
         }
-        signedRelease {
-            initWith release
-            signingConfig = signingConfigs.release
-            matchingFallbacks = ['release']
-        }
+//        signedRelease {
+//            initWith release
+//            signingConfig = signingConfigs.release
+//            matchingFallbacks = ['release']
+//        }
         debug {
             applicationIdSuffix ".debug"
             jniDebuggable true
@@ -127,26 +127,26 @@ android {
             dimension "abi"
             versionCode = 4
         }
-        x86 {
-            dimension "abi"
-            versionCode = 5
-        }
-        MIPS {
-            dimension "abi"
-            versionCode = 6
-        }
-        ARMv8 {
-            dimension "abi"
-            versionCode = 7
-        }
-        x86_64 {
-            dimension "abi"
-            versionCode = 8
-        }
-        MIPS64 {
-            dimension "abi"
-            versionCode = 9
-        }
+//        x86 {
+//            dimension "abi"
+//            versionCode = 5
+//        }
+//        MIPS {
+//            dimension "abi"
+//            versionCode = 6
+//        }
+//        ARMv8 {
+//            dimension "abi"
+//            versionCode = 7
+//        }
+//        x86_64 {
+//            dimension "abi"
+//            versionCode = 8
+//        }
+//        MIPS64 {
+//            dimension "abi"
+//            versionCode = 9
+//        }
     }
 
     // make per-variant version code
